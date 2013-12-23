@@ -76,7 +76,7 @@ grunt.initConfig({
 ```
 
 #### Custom Options
-In this example, custom options are used to do something else with whatever else. So if the `testing` file has the content `Testing` and the `123` file had the content `1 2 3`, the generated result in this case would be `Testing: 1 2 3 !!!`
+In this example, custom options are used to set up the global variable.
 
 ```js
 grunt.initConfig({
@@ -85,7 +85,7 @@ grunt.initConfig({
       variable: 'encoded'
     },
     files: {
-      'dest/result.js: ['src/original.js', 'src/second_original.js'],
+      'dest/result.js': ['src/original.js', 'src/second_original.js'],
     },
   },
 })
