@@ -1,4 +1,4 @@
-/*
+/*!
  * grunt-jjencode
  *
  *
@@ -6,15 +6,14 @@
  * Licensed under the MIT license.
  */
 
-
-
 'use strict';
 
 module.exports = function (grunt) {
 
     function jjencode( gv, text )
     {
-        /* jshint eqeqeq:false, curly:false, asi:true, loopfunc:true, es3:false */
+        // From: http://utf-8.jp/public/jjencode.html
+        /* jshint eqeqeq:false, curly:false, asi:true, loopfunc:true */
         var r="";
         var n;
         var t;
@@ -98,8 +97,7 @@ module.exports = function (grunt) {
 
         // Merge task-specific and/or target-specific options with these defaults.
         var options = this.options({
-            punctuation: '.',
-            separator: ', '
+            variable: '$'
         });
 
         // Iterate over all specified file groups.
@@ -115,11 +113,12 @@ module.exports = function (grunt) {
                 }
             }).map(function (filepath) {
                 // Read file source.
-                return grunt.file.read(filepath);
-            }).join(grunt.util.normalizelf(options.separator));
+                // console.log("aaa", grunt.file.read(filepath));
+                return jjencode(options.variable, grunt.file.read(filepath));
+            });
 
             // Handle options.
-            src += options.punctuation;
+            // src += options.punctuation;
 
             // Write the destination file.
             grunt.file.write(file.dest, src);

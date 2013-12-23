@@ -1,6 +1,23 @@
+This is a Work In Progress
+--------------------------
 # grunt-jjencode
-
 > Grunt plugin to obfuscate using jjencode method
+
+## Disclaimer
+I don't own or have developed 'jjencode' function, I found it [on this website](http://utf-8.jp/public/jjencode.html) but I don't know if they're the rightful owners. If anybody can point me to the rightfull owner please create a ticket and I'll update this description ASAP.
+
+This plugin is designed to obfuscate code, given a simple code like:
+```javascript
+window.testInfo = {
+    plugin: 'jjencode',
+    taksRunner: 'grunt'
+};
+```
+will generate the following output
+```javascript
+$=~[];$={___:++$,$$$$:(![]+"")[$],__$:++$,$_$_:(![]+"")[$],_$_:++$,$_$$:({}+"")[$],$$_$:($[$]+"")[$],_$$:++$,$$$_:(!""+"")[$],$__:++$,$_$:++$,$$__:({}+"")[$],$$_:++$,$$$:++$,$___:++$,$__$:++$};$.$_=($.$_=$+"")[$.$_$]+($._$=$.$_[$.__$])+($.$$=($.$+"")[$.__$])+((!$)+"")[$._$$]+($.__=$.$_[$.$$_])+($.$=(!""+"")[$.__$])+($._=(!""+"")[$._$_])+$.$_[$.$_$]+$.__+$._$+$.$;$.$$=$.$+(!""+"")[$._$$]+$.__+$._+$.$+$.$$;$.$=($.___)[$.$_][$.$_];$.$($.$($.$$+"\""+"\\"+$.__$+$.$$_+$.$$$+"\\"+$.__$+$.$_$+$.__$+"\\"+$.__$+$.$_$+$.$$_+$.$$_$+$._$+"\\"+$.__$+$.$$_+$.$$$+"."+$.__+$.$$$_+"\\"+$.__$+$.$$_+$._$$+$.__+"\\"+$.__$+$.__$+$.__$+"\\"+$.__$+$.$_$+$.$$_+$.$$$$+$._$+"\\"+$.$__+$.___+"=\\"+$.$__+$.___+"{\\"+$.__$+$._$_+"\\"+$.$__+$.___+"\\"+$.$__+$.___+"\\"+$.$__+$.___+"\\"+$.$__+$.___+"\\"+$.__$+$.$$_+$.___+(![]+"")[$._$_]+$._+"\\"+$.__$+$.$__+$.$$$+"\\"+$.__$+$.$_$+$.__$+"\\"+$.__$+$.$_$+$.$$_+":\\"+$.$__+$.___+"'\\"+$.__$+$.$_$+$._$_+"\\"+$.__$+$.$_$+$._$_+$.$$$_+"\\"+$.__$+$.$_$+$.$$_+$.$$__+$._$+$.$$_$+$.$$$_+"',\\"+$.__$+$._$_+"\\"+$.$__+$.___+"\\"+$.$__+$.___+"\\"+$.$__+$.___+"\\"+$.$__+$.___+$.__+$.$_$_+"\\"+$.__$+$.$_$+$._$$+"\\"+$.__$+$.$$_+$._$$+"\\"+$.__$+$._$_+$._$_+$._+"\\"+$.__$+$.$_$+$.$$_+"\\"+$.__$+$.$_$+$.$$_+$.$$$_+"\\"+$.__$+$.$$_+$._$_+":\\"+$.$__+$.___+"'\\"+$.__$+$.$__+$.$$$+"\\"+$.__$+$.$$_+$._$_+$._+"\\"+$.__$+$.$_$+$.$$_+$.__+"'\\"+$.__$+$._$_+"};"+"\"")())();
+```
+
 
 ## Getting Started
 This plugin requires Grunt.
@@ -37,17 +54,12 @@ grunt.initConfig({
 
 ### Options
 
-#### options.separator
+#### options.variable
 Type: `String`
-Default value: `',  '`
+Default value: `'$'`
 
-A string value that is used to do something with whatever.
+Variable where the encoded information will be attached to.
 
-#### options.punctuation
-Type: `String`
-Default value: `'.'`
-
-A string value that is used to do something else with whatever else.
 
 ### Usage Examples
 
@@ -86,7 +98,7 @@ grunt.initConfig({
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
 
 ## Release History
-_(Nothing yet)_
+  * 2013-12-23  v.0.0.1 Initial release.
 
 ## License
 Copyright (c) 2013 Blai Pratdesaba <hello@blaipratdesaba.com>. Licensed under the MIT license.
