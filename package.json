@@ -1,6 +1,6 @@
 {
   "name": "grunt-jjencode",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Grunt plugin to obfuscate using jjencode method",
   "homepage": "",
   "repository": "",
