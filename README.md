@@ -1,5 +1,3 @@
-This is a Work In Progress
---------------------------
 # grunt-jjencode
 > Grunt plugin to obfuscate using jjencode method
 
