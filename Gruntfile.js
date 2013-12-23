@@ -33,25 +33,19 @@ module.exports = function (grunt) {
 
         // Configuration to be run (and then tested).
         jjencode: {
-            default_task: {
-                files: {
-                    'tmp/values_out.js': ['test/values.js']
-                }
-            },
             default_options: {
                 options: {
                 },
                 files: {
-                    'tmp/default_options': ['test/fixtures/testing', 'test/fixtures/123']
+                    'tmp/default_options.js': ['test/values.js']
                 }
             },
             custom_options: {
                 options: {
-                    separator: ': ',
-                    punctuation: ' !!!'
+                    variable: 'encoded'
                 },
                 files: {
-                    'tmp/custom_options': ['test/fixtures/testing', 'test/fixtures/123']
+                    'tmp/custom_options.js': ['test/values.js']
                 }
             }
         },
@@ -68,7 +62,7 @@ module.exports = function (grunt) {
 
     // Whenever the "test" task is run, first clean the "tmp" dir, then run this
     // plugin's task(s), then test the result.
-    grunt.registerTask('test', ['clean', 'jjencode:default_task', 'nodeunit']);
+    grunt.registerTask('test', ['clean', 'jjencode', 'nodeunit']);
 
     // By default, lint and run all tests.
     // grunt.registerTask('default', ['jshint', 'test']);

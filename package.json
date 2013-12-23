@@ -11,7 +11,9 @@
     "url": "http://github.com/blaiprat"
   },
   "keywords": [
-    "gruntplugin"
+    "gruntplugin",
+    "jjencode",
+    "obfuscate"
   ],
   "main": "Gruntfile.js",
   "engines": {

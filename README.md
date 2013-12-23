@@ -17,7 +17,7 @@ will generate the following output
 ```javascript
 $=~[];$={___:++$,$$$$:(![]+"")[$],__$:++$,$_$_:(![]+"")[$],_$_:++$,$_$$:({}+"")[$],$$_$:($[$]+"")[$],_$$:++$,$$$_:(!""+"")[$],$__:++$,$_$:++$,$$__:({}+"")[$],$$_:++$,$$$:++$,$___:++$,$__$:++$};$.$_=($.$_=$+"")[$.$_$]+($._$=$.$_[$.__$])+($.$$=($.$+"")[$.__$])+((!$)+"")[$._$$]+($.__=$.$_[$.$$_])+($.$=(!""+"")[$.__$])+($._=(!""+"")[$._$_])+$.$_[$.$_$]+$.__+$._$+$.$;$.$$=$.$+(!""+"")[$._$$]+$.__+$._+$.$+$.$$;$.$=($.___)[$.$_][$.$_];$.$($.$($.$$+"\""+"\\"+$.__$+$.$$_+$.$$$+"\\"+$.__$+$.$_$+$.__$+"\\"+$.__$+$.$_$+$.$$_+$.$$_$+$._$+"\\"+$.__$+$.$$_+$.$$$+"."+$.__+$.$$$_+"\\"+$.__$+$.$$_+$._$$+$.__+"\\"+$.__$+$.__$+$.__$+"\\"+$.__$+$.$_$+$.$$_+$.$$$$+$._$+"\\"+$.$__+$.___+"=\\"+$.$__+$.___+"{\\"+$.__$+$._$_+"\\"+$.$__+$.___+"\\"+$.$__+$.___+"\\"+$.$__+$.___+"\\"+$.$__+$.___+"\\"+$.__$+$.$$_+$.___+(![]+"")[$._$_]+$._+"\\"+$.__$+$.$__+$.$$$+"\\"+$.__$+$.$_$+$.__$+"\\"+$.__$+$.$_$+$.$$_+":\\"+$.$__+$.___+"'\\"+$.__$+$.$_$+$._$_+"\\"+$.__$+$.$_$+$._$_+$.$$$_+"\\"+$.__$+$.$_$+$.$$_+$.$$__+$._$+$.$$_$+$.$$$_+"',\\"+$.__$+$._$_+"\\"+$.$__+$.___+"\\"+$.$__+$.___+"\\"+$.$__+$.___+"\\"+$.$__+$.___+$.__+$.$_$_+"\\"+$.__$+$.$_$+$._$$+"\\"+$.__$+$.$$_+$._$$+"\\"+$.__$+$._$_+$._$_+$._+"\\"+$.__$+$.$_$+$.$$_+"\\"+$.__$+$.$_$+$.$$_+$.$$$_+"\\"+$.__$+$.$$_+$._$_+":\\"+$.$__+$.___+"'\\"+$.__$+$.$__+$.$$$+"\\"+$.__$+$.$$_+$._$_+$._+"\\"+$.__$+$.$_$+$.$$_+$.__+"'\\"+$.__$+$._$_+"};"+"\"")())();
 ```
-
+Notice that will generate a variable on the global scope. You can set up the variable using the options.
 
 ## Getting Started
 This plugin requires Grunt.
@@ -43,10 +43,10 @@ In your project's Gruntfile, add a section named `jjencode` to the data object p
 grunt.initConfig({
   jjencode: {
     options: {
-      // Task-specific options go here.
+      variable: '$'
     },
     your_target: {
-      // Target-specific file lists and/or options go here.
+      'result.js': ['source.js']
     },
   },
 })
@@ -71,7 +71,7 @@ grunt.initConfig({
   jjencode: {
     options: {},
     files: {
-      'dest/default_options': ['src/testing', 'src/123'],
+      'dest/result.js': ['src/original.js', 'src/second_original.js'],
     },
   },
 })
@@ -84,11 +84,10 @@ In this example, custom options are used to do something else with whatever else
 grunt.initConfig({
   jjencode: {
     options: {
-      separator: ': ',
-      punctuation: ' !!!',
+      variable: 'encoded'
     },
     files: {
-      'dest/default_options': ['src/testing', 'src/123'],
+      'dest/result.js: ['src/original.js', 'src/second_original.js'],
     },
   },
 })
@@ -99,6 +98,7 @@ In lieu of a formal styleguide, take care to maintain the existing coding style.
 
 ## Release History
   * 2013-12-23  v.0.0.1 Initial release.
+  * 2013-12-23  v.0.1.0 First release, documentation and unit tests updated.
 
 ## License
 Copyright (c) 2013 Blai Pratdesaba <hello@blaipratdesaba.com>. Licensed under the MIT license.
